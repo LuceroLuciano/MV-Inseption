@@ -1,8 +1,11 @@
 # Máquina Virtual Inseption
-Creación de una Máquina Virtual dentro de otra Máquina Virtual
+### Creando un sueño dentro de otro sueño.
+Practica: Creación de una Máquina Virtual dentro de otra Máquina Virtual</br></br>
 
-#### Una Red Virtual permite la conexión entre los servicios de Azure y on-premise (de manera local)
-#### Una Máquina Virtual es la simulación de una computadora que permite virtualizar el sitema operativo
+Una [Red Virtual](https://docs.microsoft.com/es-mx/learn/modules/azure-networking-fundamentals/azure-virtual-network-fundamentals) permite a los servicios de Azure comunicarse entre sí, con los usuarios de Internet y con los equipos cliente en el entorno local.</br>
+Una [Máquina Virtual](https://docs.microsoft.com/es-mx/learn/modules/azure-compute-fundamentals/overview?ns-enrollment-type=LearningPath&ns-enrollment-id=learn.az-900-describe-core-azure-services) es la emulación de una computadora que permite virtualizar el sitema operativo, al igual que un equipo físico, tiene un procesador, memoria, almcenamiento y recursos de red, en la Máquina virtual puede instalar y ejecutar cualquier Software. </br></br>
+
+Seguir los pasos siguientes para realizar la practica:
 
 #### Creando dos redes virtuales
 1. Crear dos redes virtuales en [portal.azure.com](https://portal.azure.com/#home)
@@ -22,7 +25,7 @@ Creación de una Máquina Virtual dentro de otra Máquina Virtual
 1. Espacio de direcciones IPv4  dejamos la que esta por default
 2. Revisar y crear
 ![red virtual](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/2%20crear%20red%20virtual.JPG)
-3. Crear
+3. Crear </br>
 ![crear red](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/4%20crear%20red.JPG)
 
 **NOTA: Se deben crear dos redes virtuales, para hacerlo se debe seguir el mismo procedimiento que se llevo a cabo para realizar la primer red virtual, con el nombre redvirtual1, lo unico que debe cambiar es el nombre, por ejemplo, la segunda red virtual se puede llamar redvirtual2.**
@@ -32,7 +35,7 @@ Creación de una Máquina Virtual dentro de otra Máquina Virtual
 2. Configuración -> emparejamientos
 ![emparejamiento](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/5%20emparejamiento%20de%20red.JPG)
 3. Agregar emparejamiento para conectar las máquinas virtuales
--primero emparejamos de **redvirtual1** a **redvirtual2** y depues emparejamos de **redvirtual2** a **redvirtual1**
+-primero emparejamos de **redvirtual1** a **redvirtual2** y depues emparejamos de **redvirtual2** a **redvirtual1**</br>
 ![agregar emparejamiento](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/6%20agregar%20emparejamiento.JPG)
 ![agregar emparejamiento continuación](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/7%20agregar%20emparejamiento%20continuacion%20.JPG)
 4. El emparejamiento se ve de la siguiente manera: 
@@ -56,7 +59,7 @@ Creación de una Máquina Virtual dentro de otra Máquina Virtual
 3. En el apartado de Redes agregar los siguiente para la maquina virtual1
 - RED VIRTUAL = miredvirtual1
 - SUBRED = subnet1(10.0.0.0/24)
-- IP PUBLICA = my-mv1-ip
+- IP PUBLICA = my-mv1-ip </br>
 ![red virtual 1](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/16%20red%20de%20maquina%20virtual%201.JPG)
 4. REVISAR Y CREAR
 5. CREAR
@@ -84,7 +87,7 @@ Creación de una Máquina Virtual dentro de otra Máquina Virtual
 4. Una vez que se ejecuto la  maquina virtual1, abrir la consola de Power Shell para ejecutar el siguiente código que permitira ejecutar la maquina virtual2.
 `New-NetFirewallRule -DisplayName "Allow ICMPv4" -Protocol ICMPv4`
 ![codigo power shell](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/21%20comando%20para%20conectar%20las%20mv.JPG)
-5.- Antes de escribir el código para ejecutar la maquina virtual2 se debe hacer `ping` de la maquina virtual1 (En la que se encuentra ahora) hacia la maquina virtual2. Se debe tener encuenta que la dirección IP de la maquina virtual2 es `10.1.0.4` por  lo tanto debe hacer ping de la siguiente manera `ping 10.1.0.4` 
+5. Antes de escribir el código para ejecutar la maquina virtual2 se debe hacer `ping` de la maquina virtual1 (En la que se encuentra ahora) hacia la maquina virtual2. Se debe tener encuenta que la dirección IP de la maquina virtual2 es `10.1.0.4` por  lo tanto debe hacer ping de la siguiente manera `ping 10.1.0.4` 
 ![haciendo ping de mv1 a mv2](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/25%20haciendo%20ping%20de%20mv1%20a%20mv2.JPG)
 6. Despues de verficar la conexión entre la maquina virtual1 y la maquina virtual2, ejecuta e siguiente código para acceder a la mquina virtual2 desde la mauina virtual1: `mstsc /v:10.1.0.4` y escribe las credenciales correspondientes a la maquina viretual2.
 ![mv2](https://github.com/LuceroLuciano/MV-Inseption/blob/main/Img/22%20credednciales%20para%20acceder%20a%20mv2.2JPG.JPG)
